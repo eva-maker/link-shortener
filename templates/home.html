@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="center-block">
+    <h1 class="logo-title">Shorti.fy</h1>
+    <p class="subtitle">
+        Quickly shorten any long URL for your project
+    </p>
+
+    {% if user.is_authenticated %}
+        <a href="{% url 'profile' %}" class="btn-main">User Dashboard</a>
+    {% else %}
+        <a href="{% url 'login' %}" class="btn-main">User Dashboard</a>
+    {% endif %}
+</div>
+{% endblock %}

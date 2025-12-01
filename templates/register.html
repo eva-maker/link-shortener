@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-page">
+    <h1>Sign Up</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.non_field_errors }}
+
+        <label>Username:</label>
+        {{ form.username }}
+        {{ form.username.errors }}
+
+        <small class="help">
+            Required field. Maximum 150 characters. Letters, digits, and @/./+/-/_ only.
+        </small>
+
+        <label>Email:</label>
+        {{ form.email }}
+        {{ form.email.errors }}
+
+        <label>Password:</label>
+        {{ form.password1 }}
+        {{ form.password1.errors }}
+
+        <ul class="password-rules">
+            <li>Your password can’t be too similar to your other personal information.</li>
+            <li>Your password must contain at least 8 characters.</li>
+            <li>Your password can’t be a commonly used password.</li>
+            <li>Your password can’t be entirely numeric.</li>
+        </ul>
+
+        <button type="submit" class="btn-main">Sign Up</button>
+    </form>
+
+    <p class="small">
+        Already have an account?
+        <a href="{% url 'login' %}">Log In</a>
+    </p>
+</div>
+{% endblock %}

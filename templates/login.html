@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-page">
+    <h1>Log In</h1>
+
+    {% if form.non_field_errors %}
+        <div class="error-block">
+            {{ form.non_field_errors }}
+        </div>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+
+        <label>Username:</label>
+        {{ form.username }}
+        {{ form.username.errors }}
+
+        <label>Password:</label>
+        {{ form.password }}
+        {{ form.password.errors }}
+
+        <button type="submit" class="btn-main">Log In</button>
+    </form>
+
+    <p class="small">
+        Don't have an account?
+        <a href="{% url 'register' %}">Sign Up</a>
+    </p>
+</div>
+{% endblock %}

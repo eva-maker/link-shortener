@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="links-page">
+    <h1>URL Shortening</h1>
+
+    <section class="block">
+        <h2>Create a New Link</h2>
+        <form method="post">
+            {% csrf_token %}
+
+            <label>Original URL:</label>
+            {{ form.original_url }}
+            {{ form.original_url.errors }}
+
+            <label>Short Code:</label>
+            {{ form.short_code }}
+            {{ form.short_code.errors }}
+
+            <button type="submit" class="btn-main">Create</button>
+        </form>
+    </section>
+
+    <section class="block">
+        <h2>Your Links</h2>
+        {% if links %}
+            {% for link in links %}
+                <p>
+                    Link —
+                    <a href="/{{ link.short_code }}/" class="short-link">
+                        /{{ link.short_code }}/
+                    </a>
+                    <span class="long-url">→ {{ link.original_url }}</span>
+                </p>
+            {% endfor %}
+        {% else %}
+            <p>You don't have any links yet.</p>
+        {% endif %}
+    </section>
+</div>
+{% endblock %}
