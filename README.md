@@ -77,15 +77,17 @@ Then open your browser at:
 http://127.0.0.1:8000/
 
 Example Shortened URLs
+```
 /abc123/ → https://www.youtube.com/....
 /cat/    → https://docs.djangoproject.com/...
-
+```
 Future Improvements
 - Click analytics
 - Link logs and stats
 - REST API version
 - Dark mode
-
+```
 Author: Yeva Bykova
 GitHub: https://github.com/eva-maker
 Telegram: @evb_it
+```
