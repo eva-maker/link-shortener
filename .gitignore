@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django
+*.log
+*.pot
+*.pyc
+*.pyo
+*.db
+*.sqlite3-journal
+media/
+staticfiles/
+
+# Virtual environment
+venv/
+.env/
+.venv/
+env/
+ENV/
+
+# IDE / Editors
+.idea/
+.vscode/
+*.swp
+
+# macOS
+.DS_Store
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
+
+# Migrations (optional to ignore — but better to keep)
+# */migrations/*.py
+# !*/migrations/__init__.py
+
+# Local settings
+local_settings.py
+
+# Logs
+logs/
+*.log
+
+# Coverage / testing
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
