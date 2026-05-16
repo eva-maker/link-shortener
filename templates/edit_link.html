@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-page">
+    <h1>Edit Link</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.non_field_errors }}
+
+        <label>Long link:</label>
+        {{ form.original_url }}
+        {{ form.original_url.errors }}
+
+        <label>Short name:</label>
+        {{ form.short_code }}
+        {{ form.short_code.errors }}
+
+        <button type="submit" class="btn-main">Save</button>
+    </form>
+
+    <p class="small">
+        <a href="{% url 'links' %}">← Back to My Links</a>
+    </p>
+</div>
+{% endblock %}

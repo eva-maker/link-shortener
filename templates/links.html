@@ -16,8 +16,9 @@
             <label>Short Code:</label>
             {{ form.short_code }}
             {{ form.short_code.errors }}
+            <small class="help">Leave empty for auto-generation.</small>
 
-            <button type="submit" class="btn-main">Create</button>
+            <button type="submit" class="btn-main" style="display:block; margin-top:16px;">Create</button>
         </form>
     </section>
 
@@ -25,13 +26,19 @@
         <h2>Your Links</h2>
         {% if links %}
             {% for link in links %}
-                <p>
-                    Link —
-                    <a href="/{{ link.short_code }}/" class="short-link">
-                        /{{ link.short_code }}/
-                    </a>
-                    <span class="long-url">→ {{ link.original_url }}</span>
-                </p>
+                <div class="link-item">
+                    <div class="link-info">
+                        <a href="{% url 'redirect_short' link.short_code %}" class="short-link">
+                            /s/{{ link.short_code }}/
+                        </a>
+                        <span class="long-url">→ {{ link.original_url }}</span>
+                        <small class="help">{{ link.created_at|date:"d.m.Y" }}</small>
+                    </div>
+                    <div class="link-actions">
+                        <a href="{% url 'edit_link' link.pk %}" class="link-btn">Edit</a>
+                        <a href="{% url 'delete_link' link.pk %}" class="link-btn link-btn-delete">Delete</a>
+                    </div>
+                </div>
             {% endfor %}
         {% else %}
             <p>You don't have any links yet.</p>
