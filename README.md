@@ -8,7 +8,7 @@ It allows users to create short, clean links and manage them in a personal dashb
 ## Preview
 
 ![Main Page](screenshots/png1.png)
-![Dashboard](screenshots/png2.jpg)
+![Dashboard](screenshots/png2.png)
 
 ---
 
