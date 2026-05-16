@@ -8,7 +8,7 @@ It allows users to create short, clean links and manage them in a personal dashb
 ## Preview
 
 ![Main Page](screenshots/png1.png)
-![Dashboard](screenshots/image.png)
+![Dashboard](screenshots/png2.png)
 
 ---
 
@@ -38,14 +38,16 @@ It allows users to create short, clean links and manage them in a personal dashb
 
 ## Project Structure
 
+```
 link-shortener/
-│── links/          # Models, views, forms, tests
-│── shortener/      # Project settings and URLs
-│── templates/      # HTML templates
-│── static/         # CSS, images
-│── manage.py
-│── requirements.txt
-│── .gitignore
+├── links/          # Models, views, forms, tests
+├── shortener/      # Project settings and URLs
+├── templates/      # HTML templates
+├── static/         # CSS, images
+├── manage.py
+├── requirements.txt
+└── .gitignore
+```
 
 ---
 
